@@ -40,6 +40,7 @@ function processSnack() {
  * If any data is invalid, null will be returned and error messages will be shown on the web page.
  */
 function getSnack():Snack {
+    clearAllErrorMessages();
 
     // Get all inputs
     let nameTextBox = document.querySelector("#name") as HTMLInputElement;
@@ -111,4 +112,15 @@ function isValidPrice(data:string) {
  */
 function addSnack(s:Snack):void {
     
+}
+
+function clearAllErrorMessages() {
+    let allSpans = document.querySelectorAll("form span.error-msg");
+
+    for (let i = 0; i < allSpans.length; i++) {
+        let currentSpan = allSpans[i];
+        currentSpan.textContent = "";
+
+        allSpans[i].textContent = "";
+    }
 }
