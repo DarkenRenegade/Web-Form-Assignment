@@ -9,18 +9,24 @@
 </head>
 <body>
     <h1>Enter the data of the snack you wish to purchase:</h1>
-
-    <h2>Name:</h2>
-    <input type="text">
-    <br>
-    <h2>Price:</h2>
-    <input type="number" id="price">
-    <br>
-    <h2>Description:</h2>
-    <input type="text">
-    <br>
-    <h2>Expiration Date:</h2>
-    <input type="date" id="date">
-    <br><br>
+    <form>
+        <label for="Name">
+        <input type="text" id="name">
+        </label>
+        <span class="error-msg"></span>
+        <br>
+        <label for=""></label>
+        <input type="number" id="price">
+        <span class="error-msg"></span>
+        <br>
+        <label for=""></label>
+        <input type="text" id="Description">
+        <span class="error-msg"></span>
+        <br>
+        <label for=""></label>
+        <input type="date" id="Expiration">
+        <span class="error-msg"></span>
+        <br><br>
+    </form>
 </body>
 </html>
