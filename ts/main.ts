@@ -22,12 +22,13 @@ class Snack {
 
 
 window.onload = function() {
+    alert("window.onload is trying to execute")
     let addSnackBtn = document.querySelector("#add-snack") as HTMLButtonElement;
     addSnackBtn.onclick = processSnack;
 }
 
 function processSnack() {
-
+    alert("processSnack() is trying to execute");
     let userSnack = getSnack();
     if (userSnack != null) {
         addSnack(userSnack);
