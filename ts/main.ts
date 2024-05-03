@@ -40,6 +40,7 @@ function processSnack() {
  * If any data is invalid, null will be returned and error messages will be shown on the web page.
  */
 function getSnack():Snack {
+
     // Get all inputs
     let nameTextBox = document.querySelector("#name") as HTMLInputElement;
     let priceTextBox = document.querySelector("#price") as HTMLInputElement;
@@ -77,6 +78,17 @@ function getSnack():Snack {
         isValidData = false;
         expirationDateTextBox.nextElementSibling.textContent = "Expiration date must be a valid date.";
     }
+
+    if (isValidData) {
+        let addedSnack = new Snack();
+        addedSnack.name = name;
+        addedSnack.price = price;
+        addedSnack.description = description;
+        addedSnack.expirationDate = new Date(expirationDate);
+
+        return addedSnack;
+    }
+    return null;
 }
 
 /**
