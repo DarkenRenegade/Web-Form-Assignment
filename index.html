@@ -10,23 +10,28 @@
 <body>
     <h1>Enter the data of the snack you wish to purchase:</h1>
     <form>
-        <label for="Name">
+        <h2>Name:</h2>
+        <label for="Name"></label>
         <input type="text" id="name">
+        <span class="error-msg"></span>
+        <br>
+        <h2>Price:</h2>
+        <label for="price">
+        <input type="number" min="0" step="0.01" id="price">
+        <span class="error-msg"></span>
         </label>
-        <span class="error-msg"></span>
         <br>
-        <label for=""></label>
-        <input type="number" id="price">
-        <span class="error-msg"></span>
-        <br>
-        <label for=""></label>
+        <h2>Description:</h2>
+        <label for="Description"></label>
         <input type="text" id="Description">
         <span class="error-msg"></span>
         <br>
-        <label for=""></label>
-        <input type="date" id="Expiration">
+        <h2>Expiration Date:</h2>
+        <label for="expiration-date"></label>
+        <input type="date" id="expiration-date">
         <span class="error-msg"></span>
         <br><br>
+        <button id="add-snack">Submit Snack</button>
     </form>
 </body>
 </html>
