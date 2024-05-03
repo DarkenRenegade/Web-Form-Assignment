@@ -49,14 +49,34 @@ function getSnack():Snack {
     // Validate data
     let isValidData:boolean = true;
 
-    // Validate the name
-    let price:string = priceTextBox.value;
-    if (!isValidPrice(price)) {
+    // Validate the price
+    let price = parseFloat(priceTextBox.value);
+    if (isNaN(price) || price < 0) {
         isValidData = false;
-        priceTextBox.nextElementSibling.textContent = "The price must be a decimal or whole number only."
+        priceTextBox.nextElementSibling.textContent = "The price must be a positive number."
     }
 
-    
+    // Validate name
+    let name:string = nameTextBox.value;
+    if (name.trim() == "") {
+        isValidData = false;
+        let nameErrorSpan = nameTextBox.nextElementSibling;
+        nameErrorSpan.textContent = "You must provide a name.";
+    }
+
+    // Validate description
+    let description:string = descriptionTextBox.value;
+    if (description.trim() == "") {
+        isValidData = false;
+        descriptionTextBox.nextElementSibling.textContent = "You must enter a description for the snack!"
+    }
+
+    let expirationDate = expirationDateTextBox.value;
+    let expirationDateCheck = Date.parse(expirationDate);
+    if (isNaN(expirationDateCheck)) {
+        isValidData = false;
+        expirationDateTextBox.nextElementSibling.textContent = "Expiration date must be a valid date.";
+    }
 }
 
 /**
